@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/output.css">
+    <link rel="icon" href="../static/src/logo/logo.svg" type="image/vsvg" sizes="16x16">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>EyeU</title>
+    <title>Deteksi kamera | EyeU</title>
+</head>
+
+<body>
+    <!-- <Video id="video" autoplay></video> -->
+    <h1>Formulir Unggah dan Prediksi</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png">
+        <button type="submit">Unggah dan Prediksi</button>
+    </form>
+    {% if message %}
+    <p>{{ message }}</p>
+    <p>Actual class: {{ actual_class }}</p>
+    <p>Predicted class: {{ predicted_class }}</p>
+    <img src="{{ img_str }}" alt="Predicted Image"> {% endif %}
+
+
+    <!-- <script>
+        let camera = document.getElementById("video");
+
+        navigator.mediaDevices.getUserMedia({
+                video: true
+            })
+            .then(strem => {
+                camera.srcObject = strem;
+            })
+            .catch(error => {
+                comsol.log('Error accessing camera: ${error}')
+            });
+    </script> -->
+</body>
+
+</html>
